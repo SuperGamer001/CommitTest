@@ -7,7 +7,7 @@ TestMethod();
 
 Message("This is a message from the Message method.");
 
-
+UserMessage();
 
 
 
@@ -23,5 +23,20 @@ void TestMethod()
 
 void Message(string Message)
 {
+    // Print the message parameter to the console
     Console.WriteLine(Message);
+}
+void UserMessage()
+{
+    // Ask the user for a message and print it to the console
+    Console.Write("Enter a message: ");
+    string userMessage = Console.ReadLine();
+    if (!string.IsNullOrEmpty(userMessage))
+    {
+        Console.WriteLine($"You entered: {userMessage}");
+    }
+    else
+    {
+        Console.WriteLine("No message entered.");
+    }
 }
