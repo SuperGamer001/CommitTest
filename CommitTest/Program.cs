@@ -1,9 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Data;
 
-Console.WriteLine("Hello, World!");
+Message("Hello, World!");
 
-Console.WriteLine("Hey there Mr. Blue!");
+Message("Hey there Mr. Blue!");
 
 TestMethod();
 
@@ -20,13 +20,13 @@ UserMathEquation();
 void TestMethod()
 {
     // This is a test method
-    Console.WriteLine("This is a test method.");
+    Message("This is a test method.");
 }
 
-void Message(string Message)
+void Message(string message)
 {
     // Print the message parameter to the console
-    Console.WriteLine(Message);
+    Console.WriteLine(message);
 }
 void UserMessage()
 {
@@ -35,11 +35,11 @@ void UserMessage()
     string userMessage = Console.ReadLine();
     if (!string.IsNullOrEmpty(userMessage))
     {
-        Console.WriteLine($"You entered: {userMessage}");
+        Message($"You entered: {userMessage}");
     }
     else
     {
-        Console.WriteLine("No message entered.");
+        Message("No message entered.");
     }
 }
 void UserMathEquation()
@@ -50,10 +50,10 @@ void UserMathEquation()
     try
     {
         var result = new DataTable().Compute(equation, null);
-        Console.WriteLine($"The result of '{equation}' is: {result}");
+        Message($"The result of '{equation}' is: {result}");
     }
     catch (Exception ex)
     {
-        Console.WriteLine($"Error evaluating equation: {ex.Message}");
+        Message($"Error evaluating equation: {ex.Message}");
     }
 }
